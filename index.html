@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日激励 - 原型展示</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f5f8ff;
+            color: #333;
+            font-family: "PingFang SC", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        .container {
+            max-width: 1280px;
+        }
+        .device {
+            width: 390px;
+            height: 844px;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(48, 79, 255, 0.15);
+            border: 10px solid #fff;
+            background: #fff;
+            position: relative;
+        }
+        .screen {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #fff;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+        .prototype-label {
+            font-weight: 600;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            color: #304FFF;
+        }
+        h1 {
+            color: #304FFF;
+            font-weight: bold;
+        }
+        .feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            color: #333;
+        }
+        .feature-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #304FFF;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-8">
+    <div class="container mx-auto">
+        <h1 class="text-3xl font-bold text-center mb-8">每日激励应用原型</h1>
+        <div class="text-center mb-8">
+            <p class="text-lg text-gray-700 mb-4">简单、清新、积极的自我激励应用</p>
+            <p class="text-gray-600">原型设计展示以下关键功能:</p>
+            <ul class="feature-list text-left inline-block mt-2">
+                <li>每日激励语句展示</li>
+                <li>自定义激励语句</li>
+                <li>激励语句集合和收藏</li>
+                <li>提醒设置</li>
+                <li>进度追踪</li>
+            </ul>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 justify-items-center">
+            <!-- 首页原型 -->
+            <div class="flex flex-col items-center">
+                <div class="prototype-label">首页 - 每日激励</div>
+                <div class="device">
+                    <div class="screen">
+                        <iframe src="home.html" title="首页 - 每日激励"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 收藏页原型 -->
+            <div class="flex flex-col items-center">
+                <div class="prototype-label">收藏页 - 语句库</div>
+                <div class="device">
+                    <div class="screen">
+                        <iframe src="collection.html" title="收藏页 - 语句库"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 个人页面原型 -->
+            <div class="flex flex-col items-center">
+                <div class="prototype-label">我的 - 设置与统计</div>
+                <div class="device">
+                    <div class="screen">
+                        <iframe src="profile.html" title="我的 - 设置与统计"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日激励 - 首页</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: "PingFang SC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #fff;
+            color: #333;
+        }
+        .status-bar {
+            height: 44px;
+            background-color: #fff;
+            padding: 0 16px;
+            position: relative;
+            z-index: 10;
+        }
+        .tab-bar {
+            height: 83px;
+            background-color: #fff;
+            border-top: 1px solid #f0f0f0;
+        }
+        .quote-card {
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(48, 79, 255, 0.12);
+            background: linear-gradient(135deg, #304FFF 0%, #7B88FF 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .streak-bubble {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #F4F7FF;
+            box-shadow: 0 4px 10px rgba(48, 79, 255, 0.15);
+            border: 1px solid #E6EAFF;
+        }
+        .action-button {
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(48, 79, 255, 0.2);
+            transition: all 0.2s ease;
+        }
+        .action-button:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 6px rgba(48, 79, 255, 0.2);
+        }
+        .gradient-button {
+            background: #304FFF;
+        }
+        .progress-section {
+            background-color: #F4F7FF;
+            border-radius: 12px;
+        }
+        .task-item {
+            background-color: #fff;
+            border: 1px solid #E6EAFF;
+            border-radius: 8px;
+        }
+        .custom-input {
+            background-color: #F4F7FF;
+            border: 1px solid #E6EAFF;
+            color: #304FFF;
+        }
+        .search-bar {
+            background-color: #F4F7FF;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body class="h-full">
+    <!-- 科技感背景元素 -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="tech-circle tech-circle-1"></div>
+        <div class="tech-circle tech-circle-2"></div>
+        <div class="tech-dot tech-dot-1"></div>
+        <div class="tech-dot tech-dot-2"></div>
+        <div class="tech-dot tech-dot-3"></div>
+        <div class="tech-dot tech-dot-4"></div>
+    </div>
+
+    <!-- iOS 状态栏 -->
+    <div class="status-bar flex items-center justify-between">
+        <div class="text-sm font-semibold text-gray-900">9:41</div>
+        <div class="flex items-center space-x-1 text-gray-900">
+            <i class="fas fa-signal"></i>
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-battery-full"></i>
+        </div>
+    </div>
+
+    <!-- 主内容区 -->
+    <div class="flex flex-col h-[calc(100vh-127px)] overflow-y-auto px-4 pb-6 pt-2">
+        <!-- 顶部搜索栏 -->
+        <div class="search-bar flex items-center px-3 py-2.5 mb-4">
+            <i class="fas fa-search text-gray-400 mr-2"></i>
+            <input type="text" placeholder="请输入搜索内容" class="bg-transparent w-full text-sm outline-none">
+        </div>
+    
+        <!-- 每日激励语句卡片 -->
+        <div class="quote-card p-6 mb-6 text-white">
+            <div class="flex justify-between items-start mb-3">
+                <div class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">今日激励</div>
+                <button class="text-white">
+                    <i class="far fa-heart text-lg"></i>
+                </button>
+            </div>
+            <h2 class="text-xl font-bold mb-2">成功不是偶然，而是日积月累的努力和坚持。</h2>
+            <p class="text-sm opacity-80 mb-5">每一个清晨醒来，你都有机会重新定义自己的极限。</p>
+            <div class="flex justify-between items-center mt-2">
+                <div class="text-xs opacity-70">—— 马云</div>
+                <button class="bg-white bg-opacity-20 rounded-full p-2">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 今日统计 -->
+        <div class="grid grid-cols-3 gap-3 mb-5">
+            <div class="bg-white p-4 rounded-xl text-center shadow-sm">
+                <div class="text-3xl font-bold text-gray-800">32</div>
+                <div class="text-xs text-gray-500">今日任务</div>
+            </div>
+            <div class="bg-white p-4 rounded-xl text-center shadow-sm">
+                <div class="text-3xl font-bold text-gray-800">25</div>
+                <div class="text-xs text-gray-500">未完成</div>
+            </div>
+            <div class="bg-white p-4 rounded-xl text-center shadow-sm">
+                <div class="text-3xl font-bold text-[#304FFF]">16</div>
+                <div class="text-xs text-gray-500">异常问题</div>
+            </div>
+        </div>
+
+        <!-- 今日任务和进度 -->
+        <div class="progress-section p-4 mb-5">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-semibold text-gray-700">今日进度</h3>
+                <span class="text-sm text-gray-500">2/3 完成</span>
+            </div>
+            <div class="bg-white rounded-full h-2 mb-4">
+                <div class="bg-[#304FFF] h-2 rounded-full w-2/3"></div>
+            </div>
+            <div class="flex justify-between space-x-2">
+                <div class="task-item p-3 flex-1 shadow-sm">
+                    <div class="flex justify-between mb-2">
+                        <div class="text-sm font-medium">数据采集</div>
+                        <i class="fas fa-check-circle text-[#304FFF]"></i>
+                    </div>
+                    <div class="text-xs text-gray-500">9:30 AM</div>
+                </div>
+                <div class="task-item p-3 flex-1 shadow-sm">
+                    <div class="flex justify-between mb-2">
+                        <div class="text-sm font-medium">数据分析</div>
+                        <i class="fas fa-check-circle text-[#304FFF]"></i>
+                    </div>
+                    <div class="text-xs text-gray-500">12:15 PM</div>
+                </div>
+                <div class="task-item p-3 flex-1 shadow-sm">
+                    <div class="flex justify-between mb-2">
+                        <div class="text-sm font-medium">数据共享</div>
+                        <i class="far fa-circle text-gray-300"></i>
+                    </div>
+                    <div class="text-xs text-gray-500">待完成</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 常见问题解答 -->
+        <div class="bg-white rounded-xl p-4 mb-5 shadow-sm">
+            <h3 class="font-semibold text-gray-700 mb-3">常见问题解答</h3>
+            <div class="border-l-2 border-[#304FFF] pl-3 mb-2">
+                <div class="flex justify-between">
+                    <p class="text-sm">如何创建自己的激励语句？</p>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </div>
+            </div>
+            <div class="border-l-2 border-gray-200 pl-3">
+                <div class="flex justify-between">
+                    <p class="text-sm">异常问题解决方案</p>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- 创建自定义激励按钮 -->
+        <button class="flex items-center justify-center custom-input rounded-xl p-4 w-full">
+            <i class="fas fa-plus text-[#304FFF] mr-2"></i>
+            <span class="text-[#304FFF] font-medium">创建自定义激励</span>
+        </button>
+    </div>
+
+    <!-- 底部标签栏 -->
+    <div class="tab-bar flex justify-around items-center px-6 fixed bottom-0 w-full">
+        <div class="flex flex-col items-center">
+            <div class="w-10 h-10 rounded-full bg-[#304FFF] flex items-center justify-center">
+                <i class="fas fa-home text-lg text-white"></i>
+            </div>
+            <span class="text-xs mt-1 text-[#304FFF] font-medium">首页</span>
+        </div>
+        <div class="flex flex-col items-center">
+            <i class="fas fa-bookmark text-2xl text-gray-400"></i>
+            <span class="text-xs mt-1 text-gray-400">收藏</span>
+        </div>
+        <div class="flex flex-col items-center">
+            <i class="fas fa-user text-2xl text-gray-400"></i>
+            <span class="text-xs mt-1 text-gray-400">我的</span>
+        </div>
+    </div>
+
+    <!-- 简单的JS交互 -->
+    <script>
+        /**
+         * 模拟朗读功能
+         * @returns {void}
+         */
+        document.querySelector('.fa-volume-up').parentElement.addEventListener('click', function() {
+            alert('开始朗读激励语句...');
+        });
+
+        /**
+         * 模拟收藏功能
+         * @returns {void}
+         */
+        document.querySelector('.fa-heart').parentElement.addEventListener('click', function() {
+            this.querySelector('i').classList.toggle('far');
+            this.querySelector('i').classList.toggle('fas');
+            if (this.querySelector('i').classList.contains('fas')) {
+                alert('已添加到收藏!');
+            }
+        });
+
+        /**
+         * 模拟打卡功能
+         * @returns {void}
+         */
+        document.querySelector('.custom-input').addEventListener('click', function() {
+            alert('创建新的激励语句');
+        });
+    </script>
+</body>
+</html> 
